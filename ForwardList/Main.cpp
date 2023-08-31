@@ -92,19 +92,23 @@ public:
 	//					Methods
 	void print()const
 	{
-		Element* Temp = Head; // Temp - это итератор
+		/*Element* Temp = Head; // Temp - это итератор
 		// »тератор - это указатель, при помощи которого можно получить доступ к элементам структуры данных
 		while (Temp)
 		{
 			cout << Temp << tab << Temp->Data << tab << Temp->pNext << endl;
 			Temp = Temp->pNext; // ѕереход на следующий элемент
-		}
+		}*/
+		cout << "Head: " << Head << endl;
+		for (Element* Temp = Head; Temp; Temp = Temp->pNext)
+			cout << Temp << tab << Temp->Data << tab << Temp->pNext << endl;
 	}
 };
 
 void main()
 {
 	setlocale(LC_ALL, "");
+	
 	int n = 0;
 	cout << "¬ведите размер списка: "; cin >> n;
 	ForwardList list;
@@ -115,7 +119,7 @@ void main()
 	}
 	cout << delimiter << endl;
 	list.print();
-	cout << delimiter << endl;
+	/*cout << delimiter << endl;
 	list.push_front(123);
 	list.push_back(123);
 	list.print();
@@ -136,5 +140,7 @@ void main()
 	cout << "¬ведите индекс элемента: "; cin >> index;
 	list.erase(index);
 	list.print();
-	cout << delimiter << endl;
+	cout << delimiter << endl;*/
+	ForwardList list2 = list;
+	list2.print();
 }
