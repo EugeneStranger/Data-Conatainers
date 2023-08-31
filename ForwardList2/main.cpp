@@ -11,6 +11,7 @@ template<typename T> class List
 {
 	class Element
 	{
+
 		T Data;
 		Element* pNext;
 		Element* pPrev;
